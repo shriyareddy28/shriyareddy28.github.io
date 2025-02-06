@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con{
+            display: flex;
+            justify-content: center;
+        }
+        .box{
+            margin: 20px;
+            border: 2px solid gray;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        let prod=[                        
+            {
+                id:1,
+                name:"prod1",
+                price:35,
+                description:"This is the description of the product1",
+                URL:"https://picsum.photos/id/1/200/200"
+            },
+            {
+                id:2,
+                name:"prod2",
+                price:50,
+                description:"This is the description of the product2",
+                URL:"https://picsum.photos/id/2/200/200"
+            },             
+            {
+                id:3,
+                name:"prod3",
+                price:45,
+                description:"This is the description of the product3",
+                URL:"https://picsum.photos/id/3/200/200"}
+        ]
+       // console.log(prod[0])       //output on inspect->console
+       let len=prod.length
+       let s="<div class='con'>"
+       for(let i=0;i<len;i++){
+         //s=s+prod[i].name      // this is in only one line within a single div
+         //s+= `<div>${prod[i].name}</div>`      //for each prod in new line with new div in each line 
+            s+= `<div class="box">
+                <img src='${prod[i].URL}'>
+                <h2>${prod[i].name}</h2>
+                <p>${prod[i].description}</p>
+                <h3>Price:${prod[i].price}</h3>
+                <button>Add to cart</button>
+                </div>`
+       }
+       s+='</div>'
+       root.innerHTML = s 
+    </script>
+</body>
+</html>
+
+<!-- 
+    html,css,js,Reactjs         |      nodejs,mongodb
+
+i/p data(html,css)              |    receive data
+capture data(js/Reactjs)        |    save data
+send data(js,Reactjs)           |
+
+
+
+                                |       
+recieve data                    |       
+display data                    |       data
+(js,Reactjs)                    | -->
